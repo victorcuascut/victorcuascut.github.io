@@ -1,4 +1,3 @@
-<pre>
 export SHELL = /bin/bash
 export BUILD_HARNESS_URL ?= https://victorcuascut.github.io
 export BUILD_HARNESS_ORG ?= victorcuascut
@@ -20,4 +19,3 @@ clean::
         @[ "$(BUILD_HARNESS_PATH)" == '/' ] || \
          [ "$(BUILD_HARNESS_PATH)" == '.' ] || \
            echo rm -rf $(BUILD_HARNESS_PATH)
-</pre>
