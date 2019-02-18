@@ -9,13 +9,13 @@ export BUILD_HARNESS_PATH ?= $(shell until [ -d "$(BUILD_HARNESS_PROJECT)" ] || 
 .PHONY : init
 ## Init build-harness
 init::
-        @echo $(BUILD_HARNESS_PATH)
-        @curl --retry 5 --fail --silent --retry-delay 1 $(BUILD_HARNESS_URL)/bin/install.sh | \
+	@echo $(BUILD_HARNESS_PATH)
+	@curl --retry 5 --fail --silent --retry-delay 1 $(BUILD_HARNESS_URL)/bin/install.sh | \
                 bash -s "$(BUILD_HARNESS_ORG)" "$(BUILD_HARNESS_PROJECT)" "$(BUILD_HARNESS_BRANCH)"
 
 .PHONY : clean
 ## Clean build-harness
 clean::
-        @[ "$(BUILD_HARNESS_PATH)" == '/' ] || \
+	@[ "$(BUILD_HARNESS_PATH)" == '/' ] || \
          [ "$(BUILD_HARNESS_PATH)" == '.' ] || \
           echo rm -rf $(BUILD_HARNESS_PATH)
